@@ -6,6 +6,9 @@ build/
 *.log
 *.png
 
+# Documentation CSV files should be tracked
+!docs/*.csv
+
 # Python cache
 __pycache__/
 *.pyc

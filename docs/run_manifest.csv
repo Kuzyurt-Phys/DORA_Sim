@@ -1,0 +1,5 @@
+run_id,events,body,holder,source_z_mm,geometry_status,overlap_status,raw_csv,log_file,notes
+simple_no_holder_120_10M,10000000,off,off,120,current,unknown,build/simple_no_holder_tray_120_10M.csv,,bare LiF reference
+simple_holder_120_10M,10000000,off,on,120,current,unknown,build/simple_with_holder_tray_120_10M.csv,,holder effect
+dora_no_holder_120_10M,10000000,on,off,120,current,unknown,build/dora_traychannel_no_holder_120_10M.csv,,large lead contribution requires investigation
+dora_holder_120_10M,10000000,on,on,120,current,passed,build/dora_traychannel_with_holder_120_10M.csv,,current main geometry comparison
