@@ -1,0 +1,20 @@
+/vis/open OGL 800x600-0+0
+
+/vis/drawVolume
+
+/vis/viewer/set/viewpointThetaPhi 45 45 deg
+/vis/viewer/zoom 1.5
+/vis/viewer/set/autoRefresh true
+
+/vis/scene/add/axes 0 0 0 150 mm
+
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+
+/vis/scene/endOfEventAction accumulate
+
+/vis/viewer/set/background black
+/vis/viewer/set/style surface
+/vis/viewer/set/style wireframe
