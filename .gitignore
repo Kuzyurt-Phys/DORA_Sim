@@ -16,3 +16,7 @@ __pycache__/
 # Temporary files
 *.tmp
 *~
+
+# Legacy geometry snapshots
+backups_before_real_dora/
+backups_geometry_v1/
