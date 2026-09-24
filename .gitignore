@@ -1,0 +1,15 @@
+# Build directory
+build/
+
+# Generated simulation outputs
+*.csv
+*.log
+*.png
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Temporary files
+*.tmp
+*~
