@@ -20,3 +20,6 @@ __pycache__/
 # Legacy geometry snapshots
 backups_before_real_dora/
 backups_geometry_v1/
+
+# Generated comparison summaries
+*_summary.txt
