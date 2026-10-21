@@ -10,6 +10,7 @@
 // ----------------------------------------------------------------------------
 
 #include "PrimaryGeneratorAction.hh"
+#include "DoraGeometryConfig.hh"
 
 #include "G4ParticleGun.hh"
 #include "G4ParticleTable.hh"
@@ -37,9 +38,14 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
     fParticleGun->SetParticleDefinition(particle);
     fParticleGun->SetParticleEnergy(661.7 * keV);
 
-    const char* sourceEnv = std::getenv("DORA_SOURCE_Z_MM");
-    if (sourceEnv) {
-        fSourceZ = std::atof(sourceEnv) * mm;
+    fSourceZ = DoraConfig::SourceZmm() * mm;
+    const char* body = std::getenv("DORA_BUILD_BODY");
+    const std::string bodySetting = body ? body : "1";
+    const bool hasBody = !(bodySetting == "0" || bodySetting == "false" || bodySetting == "FALSE" || bodySetting == "off" || bodySetting == "OFF");
+    if (hasBody && fSourceZ/mm >= DoraConfig::PlugInnerZmm() && fSourceZ/mm <= 300.0) {
+        G4cout << "WARNING: point source is on or inside the assumed lead plug. "
+               << "This legacy geometry is not validated for quantitative dose prediction. "
+               << "Obtain plug/capsule dimensions before production interpretation." << G4endl;
     }
 
     G4cout << "\n[DORA source settings]" << G4endl;
